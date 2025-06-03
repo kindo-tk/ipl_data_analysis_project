@@ -41,11 +41,6 @@ The goal of this project is to explore IPL data across multiple seasons and extr
 
 ---
 
-## Project Structure
-<img src = "https://github.com/kindo-tk/images/blob/main/dir.png">
-
----
-
 ### Setup
 
 1. Clone the repository:
