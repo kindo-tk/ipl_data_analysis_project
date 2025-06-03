@@ -8,8 +8,28 @@ import plotly.graph_objects as go
 # Set page config
 st.set_page_config(page_title="IPL Analysis Dashboard", layout="wide")
 
-# Title
-st.title("IPL Data Analysis Dashboard (2008-2024)")
+st.markdown(
+    """
+    <div style='text-align: center;'>
+        <img src='https://upload.wikimedia.org/wikipedia/en/8/84/Indian_Premier_League_Official_Logo.svg' width='120'/>
+        <h1 style='margin-top:10px;'>IPL Data Analysis Dashboard (2008-2024)</h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+# # Title
+# st.title("IPL Data Analysis Dashboard (2008-2024)")
+
+# st.markdown(
+#     """
+#     <div style="text-align: center;">
+#         <img src="https://upload.wikimedia.org/wikipedia/en/8/84/Indian_Premier_League_Official_Logo.svg" width="150"/>
+#     </div>
+#     """,
+#     unsafe_allow_html=True
+# )
 
 # Load and clean data
 @st.cache_data(persist="disk")
