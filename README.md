@@ -37,7 +37,13 @@ The goal of this project is to explore IPL data across multiple seasons and extr
 
 ## Demo
 
-<a href="https://ipldataanalysisproject.streamlit.app/">Click here</a>
+<img src = "https://github.com/kindo-tk/images/blob/main/Screenshot%20(22).png">
+<img src = "https://github.com/kindo-tk/images/blob/main/Screenshot%20(23).png">
+<img src = "https://github.com/kindo-tk/images/blob/main/Screenshot%20(24).png">
+<img src = "https://github.com/kindo-tk/images/blob/main/Screenshot%20(25).png">
+<img src = "https://github.com/kindo-tk/images/blob/main/Screenshot%20(26).png">
+
+Visit the live app:<a href="https://ipldataanalysisproject.streamlit.app/" > Click here </a>
 
 ---
 
