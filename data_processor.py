@@ -172,6 +172,24 @@ def calculate_kpis(matches, deliveries):
             print(f"Warning: Error calculating cumulative runs: {str(e)}.")
             kpis['cumulative_runs'] = pd.DataFrame()
         
+        # IPL Winners by Season
+        try:
+            # Sort matches by season and date (or ID as a proxy for date) to get the last match of each season
+            matches_sorted = matches.sort_values(['season', 'id'], ascending=[True, True])
+            # Group by season and take the last match (assumed to be the final)
+            season_winners = matches_sorted.groupby('season').last()[['winner']].reset_index()
+            kpis['season_winners'] = season_winners
+        except Exception as e:
+            print(f"Warning: Error calculating IPL winners by season: {str(e)}")
+            kpis['season_winners'] = pd.DataFrame()
+
+        # Most Titles by Team
+        try:
+            kpis['most_titles'] = season_winners['winner'].value_counts()
+        except Exception as e:
+            print(f"Warning: Error calculating most IPL titles: {str(e)}")
+            kpis['most_titles'] = pd.Series()
+        
         return kpis
     
     except Exception as e:

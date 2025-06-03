@@ -18,19 +18,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
-# # Title
-# st.title("IPL Data Analysis Dashboard (2008-2024)")
-
-# st.markdown(
-#     """
-#     <div style="text-align: center;">
-#         <img src="https://upload.wikimedia.org/wikipedia/en/8/84/Indian_Premier_League_Official_Logo.svg" width="150"/>
-#     </div>
-#     """,
-#     unsafe_allow_html=True
-# )
-
 # Load and clean data
 @st.cache_data(persist="disk")
 def get_data():
@@ -120,7 +107,78 @@ with tab1:
                 """,
                 unsafe_allow_html=True
             )
+
+    st.subheader("IPL Winners per Season")
+    st.markdown(
+    """
+    <div style='text-align: center;'>
+        <img src='https://raw.githubusercontent.com/kindo-tk/images/main/wp3991237-removebg-preview.png' width='200' height='180'/>
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
+    if not kpis['season_winners'].empty:
+        # Create a DataFrame with a constant y-value for all bars
+        season_winners_df = kpis['season_winners'].copy()
+        season_winners_df['bar_height'] = 1  # Constant height for all bars
+        
+        # Sort the DataFrame by season in ascending order
+        season_winners_df = season_winners_df.sort_values('season', ascending=True)
+        
+        # Create a list of seasons in sorted order for the x-axis
+        sorted_seasons = season_winners_df['season'].astype(str).tolist()
+        
+        fig = px.bar(
+            season_winners_df,
+            x='season',
+            y='bar_height',
+            color='winner',
+            text='winner',
+            title="IPL Winners per Season",
+            labels={'season': 'Season', 'bar_height': ''},
+            color_discrete_sequence=px.colors.qualitative.Plotly
+        )
+        fig.update_traces(textposition='auto', textfont=dict(size=12))
+        fig.update_layout(
+            xaxis={
+                'tickangle': 45,
+                'showticklabels': True,
+                'type': 'category',
+                'categoryorder': 'array', 
+                'categoryarray': sorted_seasons 
+            },
+            xaxis_tickfont_size=12,
+            yaxis={'showticklabels': False, 'title': ''},
+            showlegend=True,
+            legend_title_text="Winning Team",
+            height=500
+        )
+        st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.warning("No data available for IPL Winners per Season.")
     
+    st.subheader("Most IPL Titles by Team")
+    if not kpis['most_titles'].empty:
+        fig = px.bar(
+            x=kpis['most_titles'].values,
+            y=kpis['most_titles'].index,
+            orientation='h',  # Horizontal bar chart
+            labels={'x': 'Titles', 'y': 'Team'},
+            title="Teams with Most IPL Titles",
+            color_discrete_sequence=['#bcbd22']
+        )
+        fig.update_layout(
+            xaxis_tickfont_size=12,
+            yaxis={'tickfont_size': 12},
+            height=400
+        )
+        st.plotly_chart(fig, use_container_width=True)
+        st.dataframe(kpis['most_titles'].reset_index().rename(columns={'index': 'Team', 'winner': 'Titles'}), 
+                    use_container_width=True, hide_index=True)
+    else:
+        st.warning("No data available for IPL Titles.")
+
+
     st.subheader("Cumulative Runs by Top Batters")
     if not kpis['cumulative_runs'].empty:
         
