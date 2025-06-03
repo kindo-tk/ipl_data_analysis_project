@@ -80,7 +80,7 @@ The goal of this project is to explore IPL data across multiple seasons and extr
 6. **Run the Streamlit application:**
 
     ```sh
-    streamlit run app.py
+    streamlit run streamlit_app.py
     ```
 ---
 
