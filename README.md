@@ -35,13 +35,13 @@ The goal of this project is to explore IPL data across multiple seasons and extr
 ---
 
 
-## 🚀 Demo
+## Demo
 
 > Coming soon — live link or screenshots here.
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 <img src = "https://github.com/kindo-tk/images/blob/main/dir.png">
 
 ---
