@@ -11,7 +11,7 @@ st.set_page_config(page_title="IPL Analysis Dashboard", layout="wide")
 st.markdown(
     """
     <div style='text-align: center;'>
-        <img src='https://upload.wikimedia.org/wikipedia/en/8/84/Indian_Premier_League_Official_Logo.svg' width='120'/>
+        <img src='https://upload.wikimedia.org/wikipedia/en/8/84/Indian_Premier_League_Official_Logo.svg' width='180' height = '100'/>
         <h1 style='margin-top:10px;'>IPL Data Analysis Dashboard (2008-2024)</h1>
     </div>
     """,
@@ -112,7 +112,7 @@ with tab1:
     st.markdown(
     """
     <div style='text-align: center;'>
-        <img src='https://raw.githubusercontent.com/kindo-tk/images/main/wp3991237-removebg-preview.png' width='200' height='180'/>
+        <img src='https://raw.githubusercontent.com/kindo-tk/images/main/wp3991237-removebg-preview.png' width='230' height='180'/>
     </div>
     """,
     unsafe_allow_html=True
