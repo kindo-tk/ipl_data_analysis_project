@@ -1,4 +1,4 @@
-# IPL Data Analysis Dashboard
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/ff800738-333f-4506-bc95-4a49f447a168" /># IPL Data Analysis Dashboard
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.38.0-red)
@@ -37,7 +37,7 @@ The goal of this project is to explore IPL data across multiple seasons and extr
 
 ## Demo
 
-> Coming soon — live link or screenshots here.
+<a href="https://ipldataanalysisproject.streamlit.app/">Click here</a>
 
 ---
 
