@@ -870,7 +870,7 @@ st.markdown(
     """
     <div style='text-align: center; font-size: 0.9em; padding-top: 20px;'>
         <strong>IPL Data Analysis Dashboard (2008–2024)</strong><br>
-        Made with ❤️ by <a href='https://kindo-tk.github.io/tk.github.io/' target='_blank'>Tufan Kundu</a> ·
+        Made with ❤️ by <a href='https://kindo-tk.github.io/tk.github.io/' target='_blank'>TK</a> ·
         <a href='https://github.com/kindo-tk' target='_blank'>GitHub</a> ·
         <a href='https://www.linkedin.com/in/tufan-kundu-577945221/' target='_blank'>LinkedIn</a>
     </div>
